@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y00-vi-BLM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scan-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Scan Something!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPj-Xc-5jo">
+                                <rect key="frame" x="120" y="158" width="376" height="321"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView hidden="YES" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDa-79-vNZ">
+                                <rect key="frame" x="16" y="84" width="568" height="496"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                            </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ez7-kp-IST">
+                                <rect key="frame" x="291" y="310" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ez7-kp-IST" secondAttribute="centerX" id="6xb-Jz-xy7"/>
+                            <constraint firstAttribute="centerY" secondItem="lPj-Xc-5jo" secondAttribute="centerY" id="BZ3-o5-8DL"/>
+                            <constraint firstItem="kDa-79-vNZ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="MTP-o9-kKv"/>
+                            <constraint firstAttribute="centerX" secondItem="lPj-Xc-5jo" secondAttribute="centerX" id="VOW-DI-UJG"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="kDa-79-vNZ" secondAttribute="bottom" constant="20" id="heq-cc-RSZ"/>
+                            <constraint firstAttribute="centerY" secondItem="ez7-kp-IST" secondAttribute="centerY" id="l57-VJ-UyU"/>
+                            <constraint firstItem="kDa-79-vNZ" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="r6J-gz-sRz"/>
+                            <constraint firstItem="kDa-79-vNZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="zh4-PW-0Yk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scan" id="n4Q-TB-Vp0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="0i5-i5-cMf">
+                            <connections>
+                                <action selector="scanButtonPressed:" destination="vXZ-lx-hvc" id="Vdm-z0-w94"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ez7-kp-IST" id="WFn-8o-LHU"/>
+                        <outlet property="scanLabel" destination="lPj-Xc-5jo" id="ZbW-N3-aTx"/>
+                        <outlet property="webView" destination="kDa-79-vNZ" id="Jkz-T2-Kd7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="381"/>
+        </scene>
+        <!--Scan Controller-->
+        <scene sceneID="sDV-Pq-wFU">
+            <objects>
+                <viewController storyboardIdentifier="scanController" id="Sta-TB-ScN" customClass="ScanController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nsy-ew-F60"/>
+                        <viewControllerLayoutGuide type="bottom" id="aVI-5O-o9c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7kE-eN-2TB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lg-OD-ZPB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="viewPreview" destination="1lg-OD-ZPB" id="1TF-in-HZ6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6wm-7A-DGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1792" y="381"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="07c-5A-6gK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y00-vi-BLM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KlJ-Cg-BAB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="dik-1m-fLg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Men-Y4-quy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="1042"/>
+        </scene>
+    </scenes>
+</document>
